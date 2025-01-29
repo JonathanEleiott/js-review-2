@@ -20,6 +20,20 @@ const renderPosts = () => {
     const li = document.createElement(`li`);
     // put the title of the post in the li
     li.innerText = singlePost.title;
+
+    // add event listener for click to the li
+    li.addEventListener(`click`, () => {
+      console.log(singlePost);
+      // get the details for the post that was clicked
+      const detailsHTML = `
+        <h2>${singlePost.title}</h2>
+
+        <p>${singlePost.body}</p>
+      `;
+      // replace the main element with the details
+      main.innerHTML = detailsHTML;
+    });
+
     // append the li to the ol
     ol.append(li);
   });
