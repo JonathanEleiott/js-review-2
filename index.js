@@ -23,7 +23,6 @@ const renderPosts = () => {
 
     // add event listener for click to the li
     li.addEventListener(`click`, () => {
-      console.log(singlePost);
       // get the details for the post that was clicked
       const detailsHTML = `
         <h2>${singlePost.title}</h2>
