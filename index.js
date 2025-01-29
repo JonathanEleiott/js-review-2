@@ -15,6 +15,7 @@ const getPosts = async() => {
 }
 
 const renderPosts = () => {
+  main.innerHTML = ``;
   // create an ol
   const ol = document.createElement(`ol`);
   
@@ -46,8 +47,22 @@ const renderPostDetails = () => {
 
     <p>${state.postDetails.body}</p>
   `;
+
+  // create a button
+  const button = document.createElement(`button`);
+  // set the text inside to "Back"
+  button.innerText = `Back`;
+  // add event listener for when it is clicked
+  button.addEventListener(`click`, () => {
+    // display the lists of posts
+    renderPosts();
+  });
+
   // replace the main element with the details
   main.innerHTML = detailsHTML;
+
+  // append the button to the main
+  main.append(button);
 }
 
 getPosts();
